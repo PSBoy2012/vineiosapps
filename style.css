@@ -57,10 +57,10 @@ body {
   z-index: 1;
   background: #003024;
   border-radius: 24px;
-  box-shadow: 0 12px 40px: #003024;
+  box-shadow: 0 12px 40px #003024; /* Fixed colon typo here */
   padding: 48px 36px 36px 36px;
   max-width: 420px;
-  text-align: center;
+  text-align: left; /* Changed from center to left-align container content */
   margin: 32px;
   backdrop-filter: blur(1px);
   border: 2px solid #00C191;
@@ -95,11 +95,12 @@ p {
 }
 
 .fancy-btn {
-  display: inline-flex;
+  display: flex; /* Changed to block/flex layout to stack on the left */
   align-items: center;
+  justify-content: center;
   gap: 0.5em;
-  padding: 0.85em 2.2em;
-  font-size: 1.1rem;
+  padding: 0.5em 1.5em; /* Reduced padding to make them smaller */
+  font-size: 0.95rem; /* Reduced font size */
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
   color: #00C191;
@@ -109,17 +110,18 @@ p {
   box-shadow: 0 4px 16px #00C191;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, background 0.3s;
-  margin-top: 1em;
+  margin: 0.4s 0; /* Reduced top/bottom spacing and removed horizontal margins */
   text-decoration: none;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
+  width: max-content; /* Keeps the button shrunk tightly around its text */
 }
+
 .fancy-btn i {
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
+
 .fancy-btn:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 8px 32px #00C191;
+  transform: translateY(-2px) scale(1.02); /* Slight adjustment for the smaller scale */
+  box-shadow: 0 6px 24px #00C191;
   background: #00C191;
   color: #000000;
 }
