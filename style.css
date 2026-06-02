@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #000000;
+  font-family: 'Roboto', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.fancy-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fancy-bg span {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(40px);
+  animation: float 12s infinite alternate;
+}
+
+.fancy-bg .circle1 {
+  width: 500px; height: 400px;
+  background: #003024;
+  left: -100px; top: -100px;
+  animation-delay: 0s;
+}
+.fancy-bg .circle2 {
+  width: 300px; height: 300px;
+  background: #003024;
+  right: -80px; top: 60px;
+  animation-delay: 2s;
+}
+.fancy-bg .circle3 {
+  width: 350px; height: 350px;
+  background: #003024;
+  left: 50%; bottom: -120px;
+  transform: translateX(-50%);
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.1) translateY(-30px); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  background: #00C191;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0,255,0,0.2);
+  padding: 48px 36px 36px 36px;
+  max-width: 420px;
+  text-align: center;
+  margin: 32px;
+  backdrop-filter: blur(1px);
+  border: 2px solid #00FF00;
+}
+
+h1 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.8rem;
+  color: #003024;
+  margin-bottom: 0.3em;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #003024;
+  animation: fadeInDown 1s cubic-bezier(.77,0,.18,1.01);
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+p {
+  font-size: 1.25rem;
+  color: #003024;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1.01);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.fancy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 2.2em;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  color: #003024;
+  background: #000000;
+  border: 2px solid #003024;
+  border-radius: 32px;
+  box-shadow: 0 4px 16px #003024;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.3s;
+  margin-top: 1em;
+  text-decoration: none;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+.fancy-btn i {
+  font-size: 1.3em;
+}
+.fancy-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 32px #003024;
+  background: #003024;
+  color: #000000;
+}
